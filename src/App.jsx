@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 
 const App = () => {
   return (
-    <div>
+    <div className="bg-orange-400">
       <h1>Hi</h1>
     </div>
   );
