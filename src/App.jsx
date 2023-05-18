@@ -1,9 +1,10 @@
 import { createRoot } from "react-dom/client";
+import SearchParams from "./pages/SearchParams";
 
 const App = () => {
   return (
-    <div className="bg-orange-400">
-      <h1>Hi</h1>
+    <div className="h-full bg-base-200">
+      <SearchParams />
     </div>
   );
 };
