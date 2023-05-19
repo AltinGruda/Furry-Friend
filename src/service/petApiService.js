@@ -24,9 +24,9 @@ export const petApi = createApi({
     }),
     //https://api.petfinder.com/v2/animals?type=dog&breed=pug&location=NJ
     search: builder.query({
-      query: (type, breed, location) => ({
-        url: "animals",
-        params: { type, breed, location },
+      query: ({ animal, breed, location }) => ({
+        url: `animals`,
+        params: { animal, breed, location },
         headers: { Authorization: `Bearer ${import.meta.env.VITE_APP}` },
       }),
       transformResponse: (response) => response.animals,
