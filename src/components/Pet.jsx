@@ -1,4 +1,4 @@
-const Pet = () => {
+const Pet = (props) => {
   return (
     <tr>
       <th></th>
@@ -7,21 +7,21 @@ const Pet = () => {
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
               <img
-                src="/tailwind-css-component-profile-2@56w.png"
-                alt="Avatar Tailwind CSS Component"
+                src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64554619/2/?bust=1684434417&width=100" //props.photo.small
+                alt="animal"
               />
             </div>
           </div>
           <div>
-            <div className="font-bold">Animal Name</div>
+            <div className="font-bold">{props.name}</div>
           </div>
         </div>
       </td>
       <td>
-        <p>Location</p>
+        <p>{props.location}</p>
       </td>
       <td>
-        <p>Breed</p>
+        <p>{props.breed}</p>
       </td>
       <th>
         <button className="btn btn-ghost btn-xs">DETAILS</button>

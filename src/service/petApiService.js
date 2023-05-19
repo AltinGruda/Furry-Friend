@@ -1,0 +1,37 @@
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
+export const petApi = createApi({
+  reducerPath: "petApi",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://api.petfinder.com/v2/",
+  }),
+  endpoints: (builder) => ({
+    //https://api.petfinder.com/v2/types/dog/breeds
+    getBreeds: builder.query({
+      query: (animal) => ({
+        url: `types/${animal}/breeds`,
+        headers: { Authorization: `Bearer ${import.meta.env.VITE_APP}` },
+      }),
+      transformResponse: (response) => response.breeds,
+    }),
+    //https://api.petfinder.com/v2/animals/{id}
+    getPet: builder.query({
+      query: (id) => ({
+        url: `animals/${id}`,
+        headers: { Authorization: `Bearer ${import.meta.env.VITE_APP}` },
+      }),
+      transformResponse: (response) => response.animal[0],
+    }),
+    //https://api.petfinder.com/v2/animals?type=dog&breed=pug&location=NJ
+    search: builder.query({
+      query: (type, breed, location) => ({
+        url: "animals",
+        params: { type, breed, location },
+        headers: { Authorization: `Bearer ${import.meta.env.VITE_APP}` },
+      }),
+      transformResponse: (response) => response.animals,
+    }),
+  }),
+});
+
+export const { useGetBreedsQuery, useGetPetQuery, useSearchQuery } = petApi;

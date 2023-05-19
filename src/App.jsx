@@ -1,10 +1,22 @@
 import { createRoot } from "react-dom/client";
 import SearchParams from "./pages/SearchParams";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./service/store";
 
 const App = () => {
   return (
     <div className="h-full bg-base-200">
-      <SearchParams />
+      <BrowserRouter>
+        <Provider store={store}>
+          <header>
+            <Link to="/">Adopt Me Link To Home!</Link>
+          </header>
+          <Routes>
+            <Route path="/" element={<SearchParams />} />
+          </Routes>
+        </Provider>
+      </BrowserRouter>
     </div>
   );
 };
