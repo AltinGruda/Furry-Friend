@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+// import { bearerToken } from "../pages/SearchParams";
 
 export const petApi = createApi({
   reducerPath: "petApi",
@@ -10,7 +11,7 @@ export const petApi = createApi({
     getBreeds: builder.query({
       query: (animal) => ({
         url: `types/${animal}/breeds`,
-        headers: { Authorization: `Bearer ${import.meta.env.VITE_APP}` },
+        headers: { Authorization: `${localStorage.getItem("token")}` },
       }),
       transformResponse: (response) => response.breeds,
     }),
@@ -18,7 +19,7 @@ export const petApi = createApi({
     getPet: builder.query({
       query: (id) => ({
         url: `animals/${id}`,
-        headers: { Authorization: `Bearer ${import.meta.env.VITE_APP}` },
+        headers: { Authorization: `${localStorage.getItem("token")}` },
       }),
       transformResponse: (response) => response.animal[0],
     }),
@@ -27,7 +28,7 @@ export const petApi = createApi({
       query: ({ animal, breed, location }) => ({
         url: `animals`,
         params: { animal, breed, location },
-        headers: { Authorization: `Bearer ${import.meta.env.VITE_APP}` },
+        headers: { Authorization: `${localStorage.getItem("token")}` },
       }),
       transformResponse: (response) => response.animals,
     }),
