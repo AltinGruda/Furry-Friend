@@ -7,28 +7,12 @@ import { useSearchQuery } from "../service/petApiService";
 const ANIMALS = ["bird", "cat", "dog", "rabbit"];
 let bearer = "";
 
-import { Client } from "@petfinder/petfinder-js";
-
-const client = new Client({
-  apiKey: "DibH8zFscTGS1WCDVqCo4UH7rVsqGD22uxNTs7NeFgTovfwhGM",
-  secret: "cn1Cm7IlnZf43Lu9uLZLRAgLKqQJtLVNzuK6bKvF",
-});
-
 const SearchParams = () => {
   const [animal, setAnimal] = useState("");
   const [breeds] = useBreedList(animal);
   const dispatch = useDispatch();
 
   const searchParams = useSelector((state) => state.searchParams.value);
-
-  let { error } = useSearchQuery(searchParams);
-  if (error && error.status === 401) {
-    client.authenticate().then((resp) => {
-      localStorage.setItem("token", resp.data.access_token);
-      // const expires = resp.data.expires_in;
-    });
-    console.log("haha");
-  }
   let { data: pets } = useSearchQuery(searchParams);
   pets = pets ?? [];
 

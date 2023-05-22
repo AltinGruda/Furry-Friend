@@ -1,5 +1,4 @@
 const Pet = (props) => {
-  console.log(props.images[0].small);
   return (
     <tr>
       <th></th>
