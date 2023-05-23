@@ -21,7 +21,7 @@ export const petApi = createApi({
         url: `animals/${id}`,
         headers: { Authorization: localStorage.getItem("token") },
       }),
-      transformResponse: (response) => response.animal[0],
+      transformResponse: (response) => response.animal,
     }),
     //https://api.petfinder.com/v2/animals?type=dog&breed=pug&location=NJ
     search: builder.query({

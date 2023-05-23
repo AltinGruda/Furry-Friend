@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 const Pet = (props) => {
+  console.log(props);
   return (
     <tr>
       <th></th>
@@ -8,7 +10,7 @@ const Pet = (props) => {
             <div className="mask mask-squircle w-12 h-12">
               <img
                 // src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/64554619/2/?bust=1684434417&width=100" //props.photo.small
-                src={props.images[0].small}
+                src={props.images[0]?.small}
                 alt="animal"
               />
             </div>
@@ -25,7 +27,9 @@ const Pet = (props) => {
         <p>{props.breed}</p>
       </td>
       <th>
-        <button className="btn btn-ghost btn-xs">DETAILS</button>
+        <Link to={`/details/${props.id}`}>
+          <button className="btn btn-ghost btn-xs">DETAILS</button>
+        </Link>
       </th>
     </tr>
   );

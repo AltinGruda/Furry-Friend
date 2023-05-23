@@ -21,6 +21,7 @@ const Results = ({ pets }) => {
           {pets.map((pet) => (
             <Pet
               key={pet.id}
+              id={pet.id}
               animal={pet.type}
               breed={pet.breeds.primary}
               name={pet.name}
