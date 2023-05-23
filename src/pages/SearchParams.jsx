@@ -5,7 +5,6 @@ import useBreedList from "../hooks/useBreedList";
 import { all } from "../service/slices/searchParamsSlice";
 import { useSearchQuery } from "../service/petApiService";
 const ANIMALS = ["bird", "cat", "dog", "rabbit"];
-let bearer = "";
 
 const SearchParams = () => {
   const [animal, setAnimal] = useState("");
@@ -14,6 +13,7 @@ const SearchParams = () => {
 
   const searchParams = useSelector((state) => state.searchParams.value);
   let { data: pets } = useSearchQuery(searchParams);
+
   pets = pets ?? [];
 
   return (
@@ -112,5 +112,4 @@ const SearchParams = () => {
   );
 };
 
-export let { bearerToken } = bearer;
 export default SearchParams;

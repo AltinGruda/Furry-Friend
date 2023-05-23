@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 const Pet = (props) => {
-  console.log(props);
   return (
     <tr>
       <th></th>
