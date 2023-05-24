@@ -4,6 +4,7 @@ import Results from "../components/Results";
 import useBreedList from "../hooks/useBreedList";
 import { all } from "../service/slices/searchParamsSlice";
 import { useSearchQuery } from "../service/petApiService";
+import Logo from "../components/Logo";
 const ANIMALS = ["bird", "cat", "dog", "rabbit"];
 
 const SearchParams = () => {
@@ -18,10 +19,13 @@ const SearchParams = () => {
 
   return (
     <div>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="flex justify-center">
+        <Logo />
+      </div>
+      <div className="flex flex-center justify-center">
+        <div className="hero-content flex-col lg:flex-row-reverse items-center">
           <div className="text-center lg:text-top">
-            <h1 className="text-5xl font-bold">
+            <h1 className="text-5xl font-bold  md:justify-items-start">
               Find Your Furry Friend: Discover the Perfect Pet for Adoption!
             </h1>
           </div>

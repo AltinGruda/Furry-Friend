@@ -15,14 +15,16 @@ const Pet = (props) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">{props.name}</div>
+            <div className="font-bold">
+              {props.name.length > 7 ? props.name.split(" ")[0] : props.name}
+            </div>
           </div>
         </div>
       </td>
-      <td>
+      <td className="hidden sm:table-cell">
         <p>{props.location}</p>
       </td>
-      <td>
+      <td className="hidden sm:table-cell">
         <p>{props.breed}</p>
       </td>
       <th>

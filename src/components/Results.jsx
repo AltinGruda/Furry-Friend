@@ -2,7 +2,7 @@ import Pet from "./Pet";
 
 const Results = ({ pets }) => {
   if (!pets.length) {
-    return <h2>No Animals Found!</h2>;
+    return <h2 className="flex justify-center text-2xl">No Animals Found!</h2>;
   }
 
   return (
@@ -12,8 +12,8 @@ const Results = ({ pets }) => {
           <tr>
             <th></th>
             <th>Name</th>
-            <th>Location</th>
-            <th>Breed</th>
+            <th className="hidden sm:table-cell">Location</th>
+            <th className="hidden sm:table-cell">Breed</th>
             <th></th>
           </tr>
         </thead>

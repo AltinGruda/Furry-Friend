@@ -17,6 +17,7 @@ module.exports = {
         900: "#323a48",
         950: "#242933",
       },
+      "green-tag": "#04784c",
     },
   },
   plugins: [require("daisyui")],
