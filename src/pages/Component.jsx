@@ -1,18 +1,4 @@
-import { useGetPetQuery } from "../service/petApiService";
-import { useParams } from "react-router-dom";
-
-const Details = () => {
-  const { id } = useParams();
-  const { isLoading, data: pet } = useGetPetQuery(id);
-  console.log(pet);
-  if (isLoading) {
-    return (
-      <div>
-        <p>loading...</p>
-      </div>
-    );
-  }
-
+const Component = () => {
   return (
     <div className="h-screen overflow-hidden flex justify-center">
       <div className="container mx-auto my-5 p-5">
@@ -29,10 +15,10 @@ const Details = () => {
                 />
               </div>
               <h1 className="text-gray-900 font-bold text-xl leading-8 my-1">
-                {pet.name}
+                Jane Doe
               </h1>
               <h3 className="text-gray-600 font-lg text-semibold leading-6">
-                {pet.breeds[0]}
+                Owner at Her Company Inc.
               </h3>
               <p className="text-sm text-gray-500 hover:text-gray-600 leading-6">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -255,4 +241,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default Component;

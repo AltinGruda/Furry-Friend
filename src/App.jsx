@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./service/store";
 import Details from "./pages/Details";
+import Component from "./pages/Component";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Routes>
             <Route path="/details/:id" element={<Details />} />
             <Route path="/" element={<SearchParams />} />
+            <Route path="/component" element={<Component />} />
           </Routes>
         </Provider>
       </BrowserRouter>
