@@ -11,7 +11,6 @@ const SearchParams = () => {
   const [animal, setAnimal] = useState("");
   const [breeds] = useBreedList(animal);
   const dispatch = useDispatch();
-
   const searchParams = useSelector((state) => state.searchParams.value);
   let { data: pets } = useSearchQuery(searchParams);
 
@@ -105,7 +104,9 @@ const SearchParams = () => {
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control*/}
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Search</button>
+                <button className="btn btn-primary" type="submit">
+                  Search
+                </button>
               </div>
             </form>
           </div>

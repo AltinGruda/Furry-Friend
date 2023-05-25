@@ -12,6 +12,7 @@ const Details = () => {
     );
   }
 
+  console.log(pet);
   return (
     <div className="h-screen flex justify-center">
       <div className="container mx-auto my-5 p-5">
@@ -177,6 +178,14 @@ const Details = () => {
                     .split(`"`)[1]
                 }
               /> */}
+              <h3 className="font-semibold text-lg">Attributes</h3>
+              {Object.entries(pet.attributes).map((key) =>
+                key[1] ? (
+                  <p key={key}>{`${key[0].split("_").join(" ")}`}</p>
+                ) : (
+                  ""
+                )
+              )}
             </div>
             {/* <!-- End of profile tab --> */}
           </div>
