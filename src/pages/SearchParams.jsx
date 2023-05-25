@@ -22,7 +22,7 @@ const SearchParams = () => {
       <div className="flex justify-center">
         <Logo />
       </div>
-      <div className="flex flex-center justify-center">
+      <div className="md:flex md:flex-center md:justify-center">
         <div className="hero-content flex-col lg:flex-row-reverse items-center">
           <div className="text-center lg:text-top">
             <h1 className="text-5xl font-bold  md:justify-items-start">
@@ -53,7 +53,7 @@ const SearchParams = () => {
                 </label>
                 <input
                   type="text"
-                  placeholder="State e.x: NJ"
+                  placeholder="State e.x: NJ, NY, LA"
                   name="location"
                   className="input input-bordered"
                 />
