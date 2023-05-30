@@ -1,7 +1,7 @@
 # Furry Friend
 Our website is dedicated to connecting loving individuals with their perfect four-legged companions through pet adoption.
 
-**Link to project:** https://furry-friend-rose.com/
+**Link to project:** https://furry-friend-rose.vercel.app/
 
 ## How It's Made:
 
